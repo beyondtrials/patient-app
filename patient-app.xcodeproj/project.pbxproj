@@ -14,6 +14,10 @@
 		4F47A1C922D897C200BA3832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F47A1C722D897C200BA3832 /* LaunchScreen.storyboard */; };
 		4FBF219022D8A03C0054D56C /* DBHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF218F22D8A03C0054D56C /* DBHandler.swift */; };
 		4FBF219522D8BDA50054D56C /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF219422D8BDA50054D56C /* SearchVC.swift */; };
+		4FBF219722D9299C0054D56C /* MyDrugsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF219622D9299C0054D56C /* MyDrugsVC.swift */; };
+		4FBF219B22D92A3D0054D56C /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF219922D92A3D0054D56C /* NewsCell.swift */; };
+		4FBF219C22D92A3D0054D56C /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBF219A22D92A3D0054D56C /* NewsCell.xib */; };
+		4FBF219F22D934BD0054D56C /* DrugsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF219D22D934BD0054D56C /* DrugsCell.swift */; };
 		7710CB209D3A7D0F15FDE1CD /* Pods_patient_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9708486580035DE84B0906 /* Pods_patient_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +32,10 @@
 		4F47A1CA22D897C200BA3832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FBF218F22D8A03C0054D56C /* DBHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHandler.swift; sourceTree = "<group>"; };
 		4FBF219422D8BDA50054D56C /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		4FBF219622D9299C0054D56C /* MyDrugsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrugsVC.swift; sourceTree = "<group>"; };
+		4FBF219922D92A3D0054D56C /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		4FBF219A22D92A3D0054D56C /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
+		4FBF219D22D934BD0054D56C /* DrugsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugsCell.swift; sourceTree = "<group>"; };
 		861259A24C249191BBFAA096 /* Pods-patient-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patient-app.release.xcconfig"; path = "Target Support Files/Pods-patient-app/Pods-patient-app.release.xcconfig"; sourceTree = "<group>"; };
 		BFE31A83DB36C201EA71D2F2 /* Pods-patient-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patient-app.debug.xcconfig"; path = "Target Support Files/Pods-patient-app/Pods-patient-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,8 +105,36 @@
 			isa = PBXGroup;
 			children = (
 				4FBF219422D8BDA50054D56C /* SearchVC.swift */,
+				4FBF219822D929AE0054D56C /* MyDrugs */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		4FBF219822D929AE0054D56C /* MyDrugs */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF219622D9299C0054D56C /* MyDrugsVC.swift */,
+				4FBF21A122D934C50054D56C /* News */,
+				4FBF21A222D934D10054D56C /* Drugs */,
+			);
+			path = MyDrugs;
+			sourceTree = "<group>";
+		};
+		4FBF21A122D934C50054D56C /* News */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF219922D92A3D0054D56C /* NewsCell.swift */,
+				4FBF219A22D92A3D0054D56C /* NewsCell.xib */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		4FBF21A222D934D10054D56C /* Drugs */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF219D22D934BD0054D56C /* DrugsCell.swift */,
+			);
+			path = Drugs;
 			sourceTree = "<group>";
 		};
 		927162BEE426D57D3424876A /* Frameworks */ = {
@@ -180,6 +216,7 @@
 			files = (
 				4F47A1C922D897C200BA3832 /* LaunchScreen.storyboard in Resources */,
 				4F47A1C622D897C200BA3832 /* Assets.xcassets in Resources */,
+				4FBF219C22D92A3D0054D56C /* NewsCell.xib in Resources */,
 				4F47A1C122D897C100BA3832 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,9 +270,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FBF219F22D934BD0054D56C /* DrugsCell.swift in Sources */,
 				4FBF219522D8BDA50054D56C /* SearchVC.swift in Sources */,
+				4FBF219722D9299C0054D56C /* MyDrugsVC.swift in Sources */,
 				4F47A1BE22D897C100BA3832 /* ViewController.swift in Sources */,
 				4F47A1BC22D897C100BA3832 /* AppDelegate.swift in Sources */,
+				4FBF219B22D92A3D0054D56C /* NewsCell.swift in Sources */,
 				4FBF219022D8A03C0054D56C /* DBHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
