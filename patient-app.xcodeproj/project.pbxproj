@@ -3,16 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4F47A1BC22D897C100BA3832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F47A1BB22D897C100BA3832 /* AppDelegate.swift */; };
 		4F47A1BE22D897C100BA3832 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F47A1BD22D897C100BA3832 /* ViewController.swift */; };
 		4F47A1C122D897C100BA3832 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F47A1BF22D897C100BA3832 /* Main.storyboard */; };
-		4F47A1C422D897C100BA3832 /* patient_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F47A1C222D897C100BA3832 /* patient_app.xcdatamodeld */; };
 		4F47A1C622D897C200BA3832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F47A1C522D897C200BA3832 /* Assets.xcassets */; };
 		4F47A1C922D897C200BA3832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F47A1C722D897C200BA3832 /* LaunchScreen.storyboard */; };
+		4FBF219022D8A03C0054D56C /* DBHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF218F22D8A03C0054D56C /* DBHandler.swift */; };
+		4FBF219522D8BDA50054D56C /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF219422D8BDA50054D56C /* SearchVC.swift */; };
 		7710CB209D3A7D0F15FDE1CD /* Pods_patient_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9708486580035DE84B0906 /* Pods_patient_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,10 +23,11 @@
 		4F47A1BB22D897C100BA3832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F47A1BD22D897C100BA3832 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F47A1C022D897C100BA3832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4F47A1C322D897C100BA3832 /* patient_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = patient_app.xcdatamodel; sourceTree = "<group>"; };
 		4F47A1C522D897C200BA3832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F47A1C822D897C200BA3832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F47A1CA22D897C200BA3832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FBF218F22D8A03C0054D56C /* DBHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHandler.swift; sourceTree = "<group>"; };
+		4FBF219422D8BDA50054D56C /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		861259A24C249191BBFAA096 /* Pods-patient-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patient-app.release.xcconfig"; path = "Target Support Files/Pods-patient-app/Pods-patient-app.release.xcconfig"; sourceTree = "<group>"; };
 		BFE31A83DB36C201EA71D2F2 /* Pods-patient-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patient-app.debug.xcconfig"; path = "Target Support Files/Pods-patient-app/Pods-patient-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,14 +66,39 @@
 			isa = PBXGroup;
 			children = (
 				4F47A1BB22D897C100BA3832 /* AppDelegate.swift */,
-				4F47A1BD22D897C100BA3832 /* ViewController.swift */,
 				4F47A1BF22D897C100BA3832 /* Main.storyboard */,
-				4F47A1C522D897C200BA3832 /* Assets.xcassets */,
-				4F47A1C722D897C200BA3832 /* LaunchScreen.storyboard */,
+				4FBF219322D8BD670054D56C /* Main */,
+				4FBF219122D8A04D0054D56C /* Persistence */,
+				4F47A1BD22D897C100BA3832 /* ViewController.swift */,
+				4FBF219222D8A0EC0054D56C /* Resources */,
 				4F47A1CA22D897C200BA3832 /* Info.plist */,
-				4F47A1C222D897C100BA3832 /* patient_app.xcdatamodeld */,
 			);
 			path = "patient-app";
+			sourceTree = "<group>";
+		};
+		4FBF219122D8A04D0054D56C /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF218F22D8A03C0054D56C /* DBHandler.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		4FBF219222D8A0EC0054D56C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4F47A1C522D897C200BA3832 /* Assets.xcassets */,
+				4F47A1C722D897C200BA3832 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4FBF219322D8BD670054D56C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF219422D8BDA50054D56C /* SearchVC.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		927162BEE426D57D3424876A /* Frameworks */ = {
@@ -88,7 +115,6 @@
 				BFE31A83DB36C201EA71D2F2 /* Pods-patient-app.debug.xcconfig */,
 				861259A24C249191BBFAA096 /* Pods-patient-app.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,9 +233,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FBF219522D8BDA50054D56C /* SearchVC.swift in Sources */,
 				4F47A1BE22D897C100BA3832 /* ViewController.swift in Sources */,
 				4F47A1BC22D897C100BA3832 /* AppDelegate.swift in Sources */,
-				4F47A1C422D897C100BA3832 /* patient_app.xcdatamodeld in Sources */,
+				4FBF219022D8A03C0054D56C /* DBHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,19 +438,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4F47A1C222D897C100BA3832 /* patient_app.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4F47A1C322D897C100BA3832 /* patient_app.xcdatamodel */,
-			);
-			currentVersion = 4F47A1C322D897C100BA3832 /* patient_app.xcdatamodel */;
-			path = patient_app.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4F47A1B022D897C100BA3832 /* Project object */;
 }
