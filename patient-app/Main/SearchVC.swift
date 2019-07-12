@@ -11,12 +11,23 @@ import AVFoundation
 
 class SearchVC: UIViewController {
 
-    @IBOutlet weak var qrCodeFrameView: UIView!
+    @IBOutlet weak var cameraFrameView: UIView!
+    @IBOutlet weak var drugTextField: UITextField!
     
+    var barcodeFrameView: UIView?
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     
-//    private var codeOutputHandler: (_ code: String) -> Void
+    var didDetectBarcode = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let nav = self.navigationController?.navigationBar
+//        nav?.barStyle = UIBarStyle.black
+//        nav?.tintColor = UIColor.yellow
+        nav?.topItem?.title = "Search"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +59,8 @@ class SearchVC: UIViewController {
             // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
             videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            videoPreviewLayer?.frame = qrCodeFrameView.layer.bounds
-            qrCodeFrameView.layer.addSublayer(videoPreviewLayer!)
+            videoPreviewLayer?.frame = cameraFrameView.layer.bounds
+            cameraFrameView.layer.addSublayer(videoPreviewLayer!)
             
             // Start video capture.
             captureSession.startRunning()
@@ -59,15 +70,15 @@ class SearchVC: UIViewController {
             
             //QR CODE SCANNING
             
-            // Initialize QR Code Frame to highlight the QR code
-//            qrCodeFrameView = UIView()
+            //Initialize QR Code Frame to highlight the QR code
+            barcodeFrameView = UIView()
             
-//            if let qrCodeFrameView = qrCodeFrameView {
-//                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-//                qrCodeFrameView.layer.borderWidth = 2
-//                view.addSubview(qrCodeFrameView)
-//                view.bringSubviewToFront(qrCodeFrameView)
-//            }
+            if let barcodeFrameView = barcodeFrameView {
+                barcodeFrameView.layer.borderColor = UIColor.green.cgColor
+                barcodeFrameView.layer.borderWidth = 2
+                cameraFrameView.addSubview(barcodeFrameView)
+                cameraFrameView.bringSubviewToFront(barcodeFrameView)
+            }
             
         } catch {
             // If any error occurs, simply print it out and don't continue any more.
@@ -87,7 +98,10 @@ class SearchVC: UIViewController {
                 .interleaved2of5,
                 .itf14,
                 .pdf417,
-                .upce]
+                .upce,
+                .aztec,
+                .dataMatrix,
+                .code39]
     }
     
     private func createPreviewLayer(withCaptureSession captureSession: AVCaptureSession, view: UIView) -> AVCaptureVideoPreviewLayer {
@@ -114,28 +128,46 @@ class SearchVC: UIViewController {
 extension SearchVC: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        
+        print("detected something")
+        
         // Check if the metadataObjects array is not nil and it contains at least one object.
-//        if metadataObjects.count == 0 {
-//            qrCodeFrameView?.frame = CGRect.zero
+        if metadataObjects.count == 0 {
+            barcodeFrameView?.frame = CGRect.zero
 //            messageLabel.text = "No QR code is detected"
-//            return
-//        }
-//
-//        // Get the metadata object.
-//        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-//
+            return
+        }
+
+        // Get the metadata object.
+        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        
+        
+        let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+        barcodeFrameView?.frame = barCodeObject!.bounds
+        
+        if (metadataObj.stringValue != nil && !didDetectBarcode) {
+            print(metadataObj.stringValue)
+            drugTextField.text = metadataObj.stringValue
+            
+            performSegue(withIdentifier: "showDrugDetailFromSearch", sender: nil)
+            
+            didDetectBarcode = true
+        }
+        
+
 //        if metadataObj.type == AVMetadataObject.ObjectType.qr {
 //            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
 //            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-//            qrCodeFrameView?.frame = barCodeObject!.bounds
+//            barcodeFrameView?.frame = barCodeObject!.bounds
 //
 //            if metadataObj.stringValue != nil {
-//                messageLabel.text = metadataObj.stringValue
+//                print(metadataObj.stringValue)
+////                messageLabel.text = metadataObj.stringValue
 //
-//                if (!isRequestShowing) {
-//                    setView(view: requestView)
-//                    isRequestShowing = true
-//                }
+////                if (!isRequestShowing) {
+////                    setView(view: requestView)
+////                    isRequestShowing = true
+////                }
 //            }
 //        }
     }
