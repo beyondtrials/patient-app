@@ -1,5 +1,5 @@
 //
-//  TabBarC.swift
+//  AppointmentConfirmationVC.swift
 //  patient-app
 //
 //  Created by Elliott Brunet on 13.07.19.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class TabBarC: UITabBarController {
+class AppointmentConfirmationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.selectedIndex = 0
+
         // Do any additional setup after loading the view.
     }
+    
+    
     
 
     /*

@@ -22,9 +22,9 @@ class MyDrugsVC: UIViewController {
     ]
     let newsLinks = ["https://www.psychiatryadvisor.com/home/topics/child-adolescent-psychiatry/citalopram-adjunctive-to-stimulant-may-be-effective-for-youth-with-chronic-irritability/","https://www.healio.com/psychiatry/pediatrics/news/online/%7B25a6b1b7-b385-4bec-85aa-c7494393e5dc%7D/adding-citalopram-to-stimulants-may-benefit-youth-with-severe-irritability","https://www.psychiatryadvisor.com/home/schizophrenia-advisor/citalopram-may-reduce-negative-symptoms-in-first-episode-schizophrenia/","https://www.firstnewscolumnist.com/2019/07/03/global-citalopram-hydrobromide-market-maia-research-report/"]
     
-    let drugsName = ["Aspirine", "Merckopram", "Citalopram", "Adderall"]
+    let drugsName = ["Merckopram", "Aspirine", "Citalopram", "Adderall"]
     let drugsRisk = [0,3,2,5]
-    let drugsOnTrial = [false, true, false, false]
+    let drugsOnTrial = [true, false, false, false]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,6 @@ extension MyDrugsVC: UITableViewDataSource {
         
         if !drugsOnTrial[indexPath.row] {
             cell.onTrialIndicator.isHidden = true
-            cell.attentionSign.isHidden = true
             cell.takeSurveyButton.isHidden = true
         }
         

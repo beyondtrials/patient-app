@@ -12,6 +12,10 @@
 		4F47A1C122D897C100BA3832 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F47A1BF22D897C100BA3832 /* Main.storyboard */; };
 		4F47A1C622D897C200BA3832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F47A1C522D897C200BA3832 /* Assets.xcassets */; };
 		4F47A1C922D897C200BA3832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F47A1C722D897C200BA3832 /* LaunchScreen.storyboard */; };
+		4F5E2FBB22D9C0DA00DA3E2E /* DoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E2FBA22D9C0DA00DA3E2E /* DoctorVC.swift */; };
+		4F7A0DBE22D9CA88009F7C2E /* SurveyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7A0DBD22D9CA88009F7C2E /* SurveyTVC.swift */; };
+		4F7A0DC222D9D14C009F7C2E /* AppointmentConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7A0DC122D9D14C009F7C2E /* AppointmentConfirmationVC.swift */; };
+		4F7A0DC422D9D206009F7C2E /* AppointmentConfirmationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7A0DC322D9D206009F7C2E /* AppointmentConfirmationTVC.swift */; };
 		4FBF219022D8A03C0054D56C /* DBHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF218F22D8A03C0054D56C /* DBHandler.swift */; };
 		4FBF219522D8BDA50054D56C /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF219422D8BDA50054D56C /* SearchVC.swift */; };
 		4FBF219722D9299C0054D56C /* MyDrugsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF219622D9299C0054D56C /* MyDrugsVC.swift */; };
@@ -31,6 +35,10 @@
 		4F47A1C522D897C200BA3832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F47A1C822D897C200BA3832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F47A1CA22D897C200BA3832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F5E2FBA22D9C0DA00DA3E2E /* DoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorVC.swift; sourceTree = "<group>"; };
+		4F7A0DBD22D9CA88009F7C2E /* SurveyTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTVC.swift; sourceTree = "<group>"; };
+		4F7A0DC122D9D14C009F7C2E /* AppointmentConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentConfirmationVC.swift; sourceTree = "<group>"; };
+		4F7A0DC322D9D206009F7C2E /* AppointmentConfirmationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentConfirmationTVC.swift; sourceTree = "<group>"; };
 		4FBF218F22D8A03C0054D56C /* DBHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHandler.swift; sourceTree = "<group>"; };
 		4FBF219422D8BDA50054D56C /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		4FBF219622D9299C0054D56C /* MyDrugsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrugsVC.swift; sourceTree = "<group>"; };
@@ -87,6 +95,14 @@
 			path = "patient-app";
 			sourceTree = "<group>";
 		};
+		4F5E2FBC22D9C0E900DA3E2E /* Doctor */ = {
+			isa = PBXGroup;
+			children = (
+				4F5E2FBA22D9C0DA00DA3E2E /* DoctorVC.swift */,
+			);
+			path = Doctor;
+			sourceTree = "<group>";
+		};
 		4FBF219122D8A04D0054D56C /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +125,10 @@
 			children = (
 				4FFAB37F22D9907000BF5719 /* Search */,
 				4FBF219822D929AE0054D56C /* MyDrugs */,
+				4F5E2FBC22D9C0E900DA3E2E /* Doctor */,
+				4F7A0DBD22D9CA88009F7C2E /* SurveyTVC.swift */,
+				4F7A0DC122D9D14C009F7C2E /* AppointmentConfirmationVC.swift */,
+				4F7A0DC322D9D206009F7C2E /* AppointmentConfirmationTVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -283,10 +303,14 @@
 			files = (
 				4FBF219F22D934BD0054D56C /* DrugsCell.swift in Sources */,
 				4FBF219522D8BDA50054D56C /* SearchVC.swift in Sources */,
+				4F7A0DC222D9D14C009F7C2E /* AppointmentConfirmationVC.swift in Sources */,
 				4FBF219722D9299C0054D56C /* MyDrugsVC.swift in Sources */,
+				4F7A0DBE22D9CA88009F7C2E /* SurveyTVC.swift in Sources */,
 				4F47A1BE22D897C100BA3832 /* ViewController.swift in Sources */,
 				4F47A1BC22D897C100BA3832 /* AppDelegate.swift in Sources */,
 				4FBF219B22D92A3D0054D56C /* NewsCell.swift in Sources */,
+				4F7A0DC422D9D206009F7C2E /* AppointmentConfirmationTVC.swift in Sources */,
+				4F5E2FBB22D9C0DA00DA3E2E /* DoctorVC.swift in Sources */,
 				4FBF219022D8A03C0054D56C /* DBHandler.swift in Sources */,
 				4FFAB37E22D98A6F00BF5719 /* TabBarC.swift in Sources */,
 			);
