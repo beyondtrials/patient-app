@@ -23,10 +23,10 @@ class SearchVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let nav = self.navigationController?.navigationBar
+//        let nav = self.navigationController?.navigationBar
 //        nav?.barStyle = UIBarStyle.black
 //        nav?.tintColor = UIColor.yellow
-        nav?.topItem?.title = "Search"
+//        nav?.topItem?.title = "Search"
     }
     
     override func viewDidLoad() {

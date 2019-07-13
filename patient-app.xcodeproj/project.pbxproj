@@ -18,6 +18,7 @@
 		4FBF219B22D92A3D0054D56C /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF219922D92A3D0054D56C /* NewsCell.swift */; };
 		4FBF219C22D92A3D0054D56C /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBF219A22D92A3D0054D56C /* NewsCell.xib */; };
 		4FBF219F22D934BD0054D56C /* DrugsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF219D22D934BD0054D56C /* DrugsCell.swift */; };
+		4FFAB37E22D98A6F00BF5719 /* TabBarC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFAB37D22D98A6F00BF5719 /* TabBarC.swift */; };
 		7710CB209D3A7D0F15FDE1CD /* Pods_patient_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9708486580035DE84B0906 /* Pods_patient_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		4FBF219922D92A3D0054D56C /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		4FBF219A22D92A3D0054D56C /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		4FBF219D22D934BD0054D56C /* DrugsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugsCell.swift; sourceTree = "<group>"; };
+		4FFAB37D22D98A6F00BF5719 /* TabBarC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarC.swift; sourceTree = "<group>"; };
 		861259A24C249191BBFAA096 /* Pods-patient-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patient-app.release.xcconfig"; path = "Target Support Files/Pods-patient-app/Pods-patient-app.release.xcconfig"; sourceTree = "<group>"; };
 		BFE31A83DB36C201EA71D2F2 /* Pods-patient-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patient-app.debug.xcconfig"; path = "Target Support Files/Pods-patient-app/Pods-patient-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 		4F47A1BA22D897C100BA3832 /* patient-app */ = {
 			isa = PBXGroup;
 			children = (
+				4FFAB37D22D98A6F00BF5719 /* TabBarC.swift */,
 				4F47A1BB22D897C100BA3832 /* AppDelegate.swift */,
 				4F47A1BF22D897C100BA3832 /* Main.storyboard */,
 				4FBF219322D8BD670054D56C /* Main */,
@@ -104,7 +107,7 @@
 		4FBF219322D8BD670054D56C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				4FBF219422D8BDA50054D56C /* SearchVC.swift */,
+				4FFAB37F22D9907000BF5719 /* Search */,
 				4FBF219822D929AE0054D56C /* MyDrugs */,
 			);
 			path = Main;
@@ -135,6 +138,14 @@
 				4FBF219D22D934BD0054D56C /* DrugsCell.swift */,
 			);
 			path = Drugs;
+			sourceTree = "<group>";
+		};
+		4FFAB37F22D9907000BF5719 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF219422D8BDA50054D56C /* SearchVC.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		927162BEE426D57D3424876A /* Frameworks */ = {
@@ -277,6 +288,7 @@
 				4F47A1BC22D897C100BA3832 /* AppDelegate.swift in Sources */,
 				4FBF219B22D92A3D0054D56C /* NewsCell.swift in Sources */,
 				4FBF219022D8A03C0054D56C /* DBHandler.swift in Sources */,
+				4FFAB37E22D98A6F00BF5719 /* TabBarC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
