@@ -11,6 +11,7 @@ import UIKit
 class NewsCell: UICollectionViewCell {
 
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var image: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +26,9 @@ class NewsCell: UICollectionViewCell {
         return "NewsCell"
     }
     
-    func configureCell(title: String) {
+    func configureCell(title: String, coverImage: String) {
         self.title.text = title
+        let image = UIImage(named: coverImage)
+        self.image.image = image
     }
-
 }

@@ -11,6 +11,15 @@ import UIKit
 class DrugsCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var molecularImage: UIImageView!
+    @IBOutlet weak var onTrialIndicator: UILabel!
+    @IBOutlet weak var takeSurveyButton: UIButton!
+    @IBOutlet weak var attentionSign: UIImageView!
+    
+    @IBAction func takeSurveyAction(_ sender: Any) {
+    }
+    
+    weak var delegate: TakeSurveyDelegate? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,4 +32,8 @@ class DrugsCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+protocol TakeSurveyDelegate: class {
+    func takeSurvey()
 }
